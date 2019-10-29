@@ -1,24 +1,31 @@
 {
-    "name": "buonzz/composer-library-template",
-    "description": "Boilerplate package for creating other packages.",
-    "keywords": ["template", "composer", "package"],
-    "license": "DBAD",
+    "name": "ccuffs/auth-iduffs",
+    "description": "Biblioteca para autenticação de usuários utilizando o idUFFS.",
+    "keywords": ["auth", "iduffs", "uffs", "academic", "composer", "package"],
+    "license": "MIT",
     "authors": [
         {
-            "name": "Darwin Biler",
-            "email": "buonzz@gmail.com"
+            "name": "Mateus Koppe",
+            "homepage": "https://github.com/mateusKoppe"
+        },
+        {
+            "name": "Fernando Bevilacqua",
+            "email": "fernando.bevilacqua@uffs.edu.br",
+            "homepage": "https://fernandobevilacqua.com"
         }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
-		"php": ">=7.1"
+        "php": ">=7.1",
+        "rmccue/requests": "^1.7",
+        "composer/ca-bundle": "^1.2"
     },
     "require-dev": {
 		"phpunit/phpunit": "6.*"
     },
     "autoload": {
         "psr-4": {
-            "Buonzz\\Template\\": "src/"
+            "CCUFFS\\Auth\\": "src/"
         }
     }
 }
