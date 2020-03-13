@@ -45,7 +45,7 @@ class AuthIdUFFS
 
     private function getServiceToken() {
         // TODO: checar sobre esse token
-        return '';
+        return 'eyAidHlwIjogIkpXVCIsICJhbGciOiAiSFMyNTYiIH0.eyAib3RrIjogImI5NGNldmpwMWtiZmdxaTNjZ2IyYWdwMm4yIiwgInJlYWxtIjogImRjPW9wZW5hbSxkYz1mb3JnZXJvY2ssZGM9b3JnIiwgInNlc3Npb25JZCI6ICJBUUlDNXdNMkxZNFNmY3dLVFBtTTFyQmRxSWxHQ2tZcjlGYXVQczhhT3BmLTdJNC4qQUFKVFNRQUNNREVBQWxOTEFCUXRPREk1TVRNek9ERXdORFkzTmpBMk1qUTROZ0FDVXpFQUFBLi4qIiB9.Tkbczqj7UzIoOBZgbfdUkjraLtiU3Li1wQTKRICYuXY';
     }
 
     public function getLoginToken($username, $password)
@@ -84,7 +84,7 @@ class AuthIdUFFS
         );
 
         $response = json_decode($response);
-
+        
         if (!isset($response->tokenId)) {
             return null;
         }
