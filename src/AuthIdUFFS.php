@@ -45,7 +45,7 @@ class AuthIdUFFS
 
     private function getServiceToken() {
         // TODO: checar sobre esse token
-        return 'eyAidHlwIjogIkpXVCIsICJhbGciOiAiSFMyNTYiIH0.eyAib3RrIjogImI5NGNldmpwMWtiZmdxaTNjZ2IyYWdwMm4yIiwgInJlYWxtIjogImRjPW9wZW5hbSxkYz1mb3JnZXJvY2ssZGM9b3JnIiwgInNlc3Npb25JZCI6ICJBUUlDNXdNMkxZNFNmY3dLVFBtTTFyQmRxSWxHQ2tZcjlGYXVQczhhT3BmLTdJNC4qQUFKVFNRQUNNREVBQWxOTEFCUXRPREk1TVRNek9ERXdORFkzTmpBMk1qUTROZ0FDVXpFQUFBLi4qIiB9.Tkbczqj7UzIoOBZgbfdUkjraLtiU3Li1wQTKRICYuXY';
+        return 'eyAidHlwIjogIkpXVCIsICJhbGciOiAiSFMyNTYiIH0.eyAib3RrIjogIm5rcjJzdXJjamI0dDQ4ZzUwamdiam44ZHE1IiwgInJlYWxtIjogImRjPW9wZW5hbSxkYz1mb3JnZXJvY2ssZGM9b3JnIiwgInNlc3Npb25JZCI6ICJBUUlDNXdNMkxZNFNmY3hFT1JDZkNCS2VMb0FkU05KZTE4bEdpRURvRmRoZEZ2RS4qQUFKVFNRQUNNREVBQWxOTEFCTXlNelkyTmpZeE9ERXlOREk1TkRjMk1ESTJBQUpUTVFBQSoiIH0.oWhnVoWoeBNHvlUo5HG6_3Wh-WCFEDmJMSX5XRE-O_A';
     }
 
     public function getLoginToken($username, $password)
