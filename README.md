@@ -1,69 +1,71 @@
 <p align="center">
-    <img width="400" height="200" src=".github/logo.png" title="Logo do projeto"><br />
-    <img src="https://img.shields.io/maintenance/yes/2019?style=for-the-badge" title="Status do projeto">
-    <img src="https://img.shields.io/travis/ccuffs/template?style=for-the-badge" title="Status do build">
+    <img width="800" height="200" src=".github/logo.png" title="Logo do projeto"><br />
+    <img src="https://img.shields.io/maintenance/yes/2020?style=for-the-badge" title="Status do projeto">
+    <img src="https://img.shields.io/travis/ccuffs/auth-iduffs?style=for-the-badge" title="Status do build">
 </p>
 
-# Título
+# auth-iduffs
 
-Coloque uma descrição do projeto aqui. Geralmente essa descrição tem de duas a três linhas de tamanho. Ela deve dar uma visão geral sobre o que é o projeto, ex.: tecnologia usada, filosofia de existência, qual problema tenta-se resolver, etc. Se você precisa escrever mais que 3 linhas de descrição, crie subseções.
-
-> **IMPORTANTE:** coloque aqui alguma mensagem que é muito relevante aos usuários do projeto, se for o caso.
+Um pacote PHP para autenticação de usuários através do [idUFFS](https://id.uffs.edu.br) da [Universidade Federal da Fronteira Sul](https://www.uffs.edu.br). Além de prover autenticação, ele oferece informações sobre o usuário autenticado, como nome completo, CPF, entre outros.
 
 ## Features
 
-Aqui você pode colocar uma screenshot do produto resultante desse projeto. Descreva também suas features usando uma lista:
+* Autenticação com o endpoint [id.uffs.edu.br](https://id.uffs.edu.br) via HTTPS;
+* Não necessita de tokens ou autorizações de API;
+* Obtem informações sobre o usuário (nome, CPF, etc);
 
-* Fácil integração;
-* Poucas dependências;
-* Utiliza um template lindo para organizar o `README`;
-* Possui ótima documentação e testes.
+## Utilização
 
-## Começando
+### 1. Adicione o pacote ao seu projeto
 
-### 1. Primeiro passo para começar
-
-Geralmente o primeiro passo para começar é instalar dependências para rodar o projeto. Rode:
+Na pasta raiz do seu projeto PHP, rode:
 
 ```
-apt get install dependencia
+composer require ccuffs/auth-iduffs
 ```
 
-Recomenda-se que cada comando seja colocado em uma linha diferente:
+Todas as dependências serão instaladas.
 
+### 2. Autenticando usuários
+
+Para autenticar um usuário, você utilizará a classe `AuthIdUFFS` informando os valores `user` e `password`, que são o idUFFS e senha do usuário, respecitivamente.
+
+As informações são passadas ao método `login()` através de um array associativo:
+
+```php
+$auth = new CCUFFS\Auth\AuthIdUFFS();
+
+$info = $auth->login([
+    'user'     => 'meuIdUFFS',
+    'password' => 'minhaSenha'
+]);
 ```
-apt get install outra-coisa
-```
 
-Dessa forma os usuários podem copiar e colar sem ler as documentação (que é o que geralmente acontece).
+Se as credenciais informadas forem válidas, o método `login()` retorna um objeto com as seguintes propriedades:
 
-### 2. Outro(s) passo(s)
+```php
+object(stdClass)
+  public 'username' => string
+  public 'uid' => string
+  public 'email' => string
+  public 'pessoa_id' => string
+  public 'name' => string
+  public 'cpf' => string
+  public 'token_id' => string 
+  public 'authenticated' => boolean
+``` 
 
-Geralmente os próximos passos ensinam como instalar e configurar o projeto para uso/desenvolvimento. Rode:
-
-```
-git clone https://github.com/ccuffs/template template
-```
+Se as credenciais não forem válidas (usuário ou senha incorretos), o método `login()` retorna `null`.
 
 ## Contribua
 
-Sua ajuda é muito bem-vinda, independente da forma! Confira o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) para conhecer todas as formas de contribuir com o projeto. Por exemplo, [sugerir uma nova funcionalidade](https://github.com/ccuffs/template/issues/new?assignees=&labels=&template=feature_request.md&title=), [reportar um problema/bug](https://github.com/ccuffs/template/issues/new?assignees=&labels=bug&template=bug_report.md&title=), [enviar um pull request](https://github.com/ccuffs/hacktoberfest/blob/master/docs/tutorial-pull-request.md), ou simplemente utilizar o projeto e comentar sua experiência.
-
-Veja o arquivo [ROADMAP.md](ROADMAP.md) para ter uma ideia de como o projeto deve evoluir.
+Sua ajuda é muito bem-vinda, independente da forma! Confira o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) para conhecer todas as formas de contribuir com o projeto. Por exemplo, [sugerir uma nova funcionalidade](https://github.com/ccuffs/auth-iduffs/issues/new?assignees=&labels=&template=feature_request.md&title=), [reportar um problema/bug](https://github.com/ccuffs/auth-iduffs/issues/new?assignees=&labels=bug&template=bug_report.md&title=), [enviar um pull request](https://github.com/ccuffs/hacktoberfest/blob/master/docs/tutorial-pull-request.md), ou simplemente utilizar o projeto e comentar sua experiência.
 
 
 ## Licença
 
-Esse projeto é licenciado nos termos da licença open-source [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/) e está disponível de graça.
+Esse projeto é licenciado nos termos da licença open-source [MIT](https://choosealicense.com/licenses/mit) e está disponível de graça.
 
 ## Changelog
 
 Veja todas as alterações desse projeto no arquivo [CHANGELOG.md](CHANGELOG.md).
-
-## Projetos semelhates
-
-Abaixo está uma lista de links interessantes e projetos similares:
-
-* [Outro projeto](https://github.com/projeto)
-* [Projeto inspiração](https://github.com/projeto)
-* [Ferramenta semelhante](https://github.com/projeto)
