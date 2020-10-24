@@ -8,7 +8,7 @@ namespace CCUFFS\Auth;
  * Use this section to define what this class is doing, the PHPDocumentator will use this
  * to automatically generate an API documentation using this information.
  *
- * @author Mateus Koppe
+ * @author Mateus Koppe <mateus.koppe@gmail.com>
  * @author Fernando Bevilacqua <fernando.bevilacqua@uffs.edu.br>
  */
 class AuthIdUFFS
