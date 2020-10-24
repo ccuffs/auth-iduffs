@@ -44,8 +44,14 @@ class AuthIdUFFS
     }
 
     private function getServiceToken() {
-        // TODO: checar sobre esse token
-        return 'eyAidHlwIjogIkpXVCIsICJhbGciOiAiSFMyNTYiIH0.eyAib3RrIjogIm5rcjJzdXJjamI0dDQ4ZzUwamdiam44ZHE1IiwgInJlYWxtIjogImRjPW9wZW5hbSxkYz1mb3JnZXJvY2ssZGM9b3JnIiwgInNlc3Npb25JZCI6ICJBUUlDNXdNMkxZNFNmY3hFT1JDZkNCS2VMb0FkU05KZTE4bEdpRURvRmRoZEZ2RS4qQUFKVFNRQUNNREVBQWxOTEFCTXlNelkyTmpZeE9ERXlOREk1TkRjMk1ESTJBQUpUTVFBQSoiIH0.oWhnVoWoeBNHvlUo5HG6_3Wh-WCFEDmJMSX5XRE-O_A';
+        $raw_response = $this->requestPost('https://id.uffs.edu.br/id/json/authenticate?');
+        $response = json_decode($raw_response);
+        
+        if ($response === false || !isset($response->authId)) {
+            return null;
+        }
+
+        return $response->authId;
     }
 
     public function getLoginToken($username, $password)
