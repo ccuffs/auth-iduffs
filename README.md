@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="800" height="200" src=".github/logo.png" title="Logo do projeto"><br />
+    <img src=".github/logo.png" title="Logo do projeto"><br />
     <img src="https://img.shields.io/maintenance/yes/2020?style=for-the-badge" title="Status do projeto">
     <img src="https://img.shields.io/travis/ccuffs/auth-iduffs?style=for-the-badge" title="Status do build">
 </p>
