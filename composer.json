@@ -15,13 +15,16 @@
         }
     ],
     "type": "library",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.1",
         "rmccue/requests": "^1.7",
         "composer/ca-bundle": "^1.2"
     },
     "require-dev": {
-		"phpunit/phpunit": "6.*"
+		"phpunit/phpunit": "9.3.10",
+        "pestphp/pest": "^0.3.12"
     },
     "autoload": {
         "psr-4": {
