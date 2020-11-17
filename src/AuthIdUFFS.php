@@ -3,10 +3,10 @@
 namespace CCUFFS\Auth;
 
 /**
- * A sample class
+ * Autenticação com o idUFFS da Universidade Federal da Fronteira Sul.
  *
- * Use this section to define what this class is doing, the PHPDocumentator will use this
- * to automatically generate an API documentation using this information.
+ * Essa classe disponibiliza formas de autenticação através do gateway idUFFS
+ * da Universidade Federal da Fronteira Sul (https://www.uffs.edu.br).
  *
  * @author Mateus Koppe <mateus.koppe@gmail.com>
  * @author Fernando Bevilacqua <fernando.bevilacqua@uffs.edu.br>
@@ -14,17 +14,28 @@ namespace CCUFFS\Auth;
 class AuthIdUFFS
 {
     /**
-     * Sample method 
+     * Autentica um usuário
      *
-     * Always create a corresponding docblock for each method, describing what it is for,
-     * this helps the phpdocumentator to properly generator the documentation
+     * Faz uma requisição ao gateway de autentição da UFFS para autenticar um usuário através do seu idUFFS e senha.
      *
-     * @param string $param1 A string containing the parameter, do this for each parameter to the function, make sure to make it descriptive
+     * @param array $params vetor associativo com uma chave `user` cujo valor é uma string contendo o idUFFS do usuário, e uma chave `password` cujo valor é uma string da senha do usuário.
      *
-     * @return string
+     * @return stdClass objeto contendo as propriedades `username`, `uid`, `email`, `pessoa_id`, `name`, `cpf`, `token_id` e `authenticated` em caso de sucesso, ou `null` em caso de falha.
      */
     public function login($params)
     {
+        if(!is_array($params)) {
+            throw new \Exception('Associative array expected as parameter.');
+        }
+
+        if(!isset($params['user']) || empty($params['user'])) {
+            throw new \Exception('Key \'user\' was not found or is empty in array provided as parameter.');
+        }
+
+        if(!isset($params['password'])) {
+            throw new \Exception('Key \'password\' was not found in array provided as parameter.');
+        }
+
         $username = $params['user'];
         $password = $params['password'];
 
