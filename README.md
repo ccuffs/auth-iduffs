@@ -57,6 +57,32 @@ object(stdClass)
 
 Se as credenciais não forem válidas (usuário ou senha incorretos), o método `login()` retorna `null`.
 
+## Desenvolvimento
+
+Se você pretende criar features novas, corrigir bugs ou afins, siga o passo a passo abaixo.
+
+Clone o repositório:
+
+```
+git clone https://github.com/ccuffs/auth-iduffs && cd auth-iduffs
+```
+
+Instale as dependências:
+
+```
+git clone https://github.com/ccuffs/auth-iduffs && cd auth-iduffs
+```
+
+Implemente o que for necessário e rode os testes:
+
+```
+./vendor/bin/pest
+```
+
+Um dos testes (de autenticação de usuário valido) necessita de um idUFFS e senha válidos. Você pode informar esses valores através das variáveis de ambiente `AUTH_IDUFFS_TEST_USERNAME` e `AUTH_IDUFFS_TEST_PASSWORD`, respectivamente.
+
+Se essas variáveis de ambiente não forem informadas, somente um dos testes deve falhar. Os demais devem passar.
+
 ## Contribua
 
 Sua ajuda é muito bem-vinda, independente da forma! Confira o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) para conhecer todas as formas de contribuir com o projeto. Por exemplo, [sugerir uma nova funcionalidade](https://github.com/ccuffs/auth-iduffs/issues/new?assignees=&labels=&template=feature_request.md&title=), [reportar um problema/bug](https://github.com/ccuffs/auth-iduffs/issues/new?assignees=&labels=bug&template=bug_report.md&title=), [enviar um pull request](https://github.com/ccuffs/hacktoberfest/blob/master/docs/tutorial-pull-request.md), ou simplemente utilizar o projeto e comentar sua experiência.
