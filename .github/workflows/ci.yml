@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    env:
+      AUTH_IDUFFS_TEST_USERNAME: ${{ secrets.AUTH_IDUFFS_TEST_USERNAME }}
+      AUTH_IDUFFS_TEST_PASSOWRD: ${{ secrets.AUTH_IDUFFS_TEST_PASSOWRD }}
     steps:
       - uses: actions/checkout@v2
       - name: Install Dependencies (PHP vendors)
