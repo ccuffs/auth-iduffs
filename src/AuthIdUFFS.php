@@ -141,9 +141,10 @@ class AuthIdUFFS
             'username' => $data->username,
             'uid' => $data->uid[0],
             'email' => $data->mail[0],
-            'pessoa_id' => $data->pessoa_id[0],
+            'pessoa_id' => count($data->pessoa_id) > 0 ? $data->pessoa_id[0] : '',
             'name' => $data->cn[0],
-            'cpf' => $data->employeeNumber[0],
+            'cpf' => count($data->employeeNumber) > 0 ? $data->employeeNumber[0] : '',
+            'location' => count($data->sn) > 0 ? $data->sn[0] : '',
             'token_id' => $data->token_id,
             'authenticated' => $data->authenticated
         ];

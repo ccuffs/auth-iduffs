@@ -51,6 +51,7 @@ object(stdClass)
   public 'pessoa_id' => string
   public 'name' => string
   public 'cpf' => string
+  public 'location' => string
   public 'token_id' => string 
   public 'authenticated' => boolean
 ``` 
