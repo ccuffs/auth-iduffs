@@ -1,20 +1,20 @@
 <p align="center">
     <img src=".github/logo.png" title="Logo do projeto"><br />
-    <img src="https://img.shields.io/maintenance/yes/2020?style=for-the-badge" title="Status do projeto">
-    <img src="https://img.shields.io/travis/ccuffs/auth-iduffs?style=for-the-badge" title="Status do build">
+    <img src="https://img.shields.io/maintenance/yes/2021?style=for-the-badge" title="Status do projeto">
+    <img src="https://img.shields.io/github/workflow/status/ccuffs/auth-iduffs/CI?label=Build&logo=github&logoColor=white&style=for-the-badge" title="Build status">
 </p>
 
 # auth-iduffs
 
 Um pacote PHP para autenticação de usuários através do [idUFFS](https://id.uffs.edu.br) da [Universidade Federal da Fronteira Sul](https://www.uffs.edu.br). Além de prover autenticação, ele oferece informações sobre o usuário autenticado, como nome completo, CPF, entre outros.
 
-## Features
+## ✨Features
 
 * Autenticação com o endpoint [id.uffs.edu.br](https://id.uffs.edu.br) via HTTPS;
 * Não necessita de tokens ou autorizações de API;
 * Obtem informações sobre o usuário (nome, CPF, etc);
 
-## Utilização
+## 🚀 Utilização
 
 ### 1. Adicione o pacote ao seu projeto
 
@@ -57,7 +57,7 @@ object(stdClass)
 
 Se as credenciais não forem válidas (usuário ou senha incorretos), o método `login()` retorna `null`.
 
-## Desenvolvimento
+## 👩‍💻 Desenvolvimento
 
 Se você pretende criar features novas, corrigir bugs ou afins, siga o passo a passo abaixo.
 
@@ -83,15 +83,15 @@ Um dos testes (de autenticação de usuário valido) necessita de um idUFFS e se
 
 Se essas variáveis de ambiente não forem informadas, somente um dos testes deve falhar. Os demais devem passar.
 
-## Contribua
+## 🤝 Contribua
 
 Sua ajuda é muito bem-vinda, independente da forma! Confira o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) para conhecer todas as formas de contribuir com o projeto. Por exemplo, [sugerir uma nova funcionalidade](https://github.com/ccuffs/auth-iduffs/issues/new?assignees=&labels=&template=feature_request.md&title=), [reportar um problema/bug](https://github.com/ccuffs/auth-iduffs/issues/new?assignees=&labels=bug&template=bug_report.md&title=), [enviar um pull request](https://github.com/ccuffs/hacktoberfest/blob/master/docs/tutorial-pull-request.md), ou simplemente utilizar o projeto e comentar sua experiência.
 
 
-## Licença
+## 🎫 Licença
 
 Esse projeto é licenciado nos termos da licença open-source [MIT](https://choosealicense.com/licenses/mit) e está disponível de graça.
 
-## Changelog
+## 🧬 Changelog
 
 Veja todas as alterações desse projeto no arquivo [CHANGELOG.md](CHANGELOG.md).
